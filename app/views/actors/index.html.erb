@@ -1,5 +1,9 @@
 <div ng-app="app">
-  <div ng-controller="actorsCtrl">
-    <p>{{ message }}</p>
+  <div ng-controller="actorsCtrl" ng-init="setup()">
+    <h2>Choose a Decade!</h2>
+      <p ng-repeat="bpMovie in bpMovies">{{ bpMovie.original_title }}</p>
   </div>
 </div>
+
+
+<a href="/movies" class="btn btn-primary" role="button">Full Actor Search</a>
