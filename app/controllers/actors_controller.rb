@@ -4,10 +4,7 @@ require 'unirest'
   def index
   end
 
-  def bp_results
-  end
-
-  def search
+  def brad
   end
 
   def movies
