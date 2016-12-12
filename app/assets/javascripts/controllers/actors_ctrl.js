@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  angular.module("app").controller("actorsCtrl", function($scope, $http) {
+  angular.module("app").controller("actorsCtrl", ['$scope', '$http', function($scope, $http) {
     $scope.setup = function() {
       $http.get("/themoviedb_data.json").then(function(response) {
         $scope.results = response.data;
@@ -18,5 +18,5 @@
       });
     };
 
-  });
+  }]);
 })();
