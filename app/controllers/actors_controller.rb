@@ -4,9 +4,6 @@ require 'unirest'
   def index
   end
 
-  def brad
-  end
-
   def movies
     if params[:search]
       @name_string = params[:search]

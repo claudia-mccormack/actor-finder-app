@@ -1,9 +1,36 @@
-<div ng-app="app">
-  <div ng-controller="actorsCtrl" ng-init="setup()">
-    <h2>Choose a Decade!</h2>
-      <p ng-repeat="bpMovie in bpMovies">{{ bpMovie.original_title }}</p>
+<h1><b>You need more Brad in your life!</b></h1>
+  <div ng-app="app">
+    <div ng-controller="actorsCtrl" ng-init="setup()">
+      <figure>
+        <img src="/assets/brad_pitt-fb485064781837635486dbde22a5ff598855b14e493a045d82e01a864cc288cd.jpg" alt="Brad pitt" style="width:400px">
+        <figcaption>Just some of the many faces of Brad</figcaption>
+      </figure>
+        <h3>Choose your favorite decade to see some great Brad Pitt movies!</h3>
+          <div>
+            <p>
+              <button ng-click="decade(199)" class="btn btn-primary btn-lg" role="button">1990's</button>
+              <button ng-click="decade(200)" class="btn btn-primary btn-lg" role="button">2000's</button>
+              <button ng-click="decade(201)" class="btn btn-primary btn-lg" role="button">2010's</button>
+            </p>
+          </div>
+
+      <div class="container-fluid">
+        <div class="row-fluid" ng-repeat="movie in movies">
+          <div class="col-xs-12 col-sm-6 col-lg-8">
+            <div class="well-fluid">
+
+              <h4>{{movie.original_title}}</h4>
+              <p><img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="{{movie.original_title}}"></p>
+              <button class="btn btn-info btn-sm" ng-click="showOverview = !showOverview">Overview</button>
+                <div class="overview" ng-show="showOverview"><p>{{ movie.overview }}</p></div>
+            </div>
+            <br><br>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
-
-
-<a href="/movies" class="btn btn-primary" role="button">Full Actor Search</a>
+  <br>
+  <p>Seen all of Brad's movies? Looking for a change?</p>
+  <p><a href="/movies" class="btn btn-info btn-lg" role="button">Search the Full Database!</a></p>

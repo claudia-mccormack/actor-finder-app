@@ -1,15 +1,16 @@
 <h1>Actor Search</h1>
-<h3>Enter an actor's name and hit 'Return' to search!</h3>
-
-<%= form_tag movies_path, method: :get, class: "navbar-form navbar-left search-form" do %>
-  <%= text_field_tag(
-      :search,
-      params[:search],
-      placeholder: "Search",
-      class: "form-control"
-  ) %>
-<% end %>
-
+  <h4>Enter an actor's name and hit 'Return' to search!</h4>
+    <small><a href="/">Back to Brad</a></small>
+    <div>
+    <%= form_tag movies_path, method: :get, class: "navbar-form navbar-left search-form" do %>
+      <%= text_field_tag(
+          :search,
+          params[:search],
+          placeholder: "Search",
+          class: "form-control"
+      ) %>
+    <% end %>
+  </div>
 <% if @movies %>
   <%= @movies %>
 <% end %>
